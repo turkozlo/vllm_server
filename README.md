@@ -29,6 +29,23 @@ This directory contains scripts and configurations for running a local OpenAI-co
    ./start_server.sh
    ```
 
+### Method 2: Alternative Server (Transformers + FastAPI)
+
+Используйте этот метод, если `vllm` не устанавливается или вызывает ошибки CUDA.
+
+1.  **Установите зависимости**:
+    ```bash
+    pip install -r requirements_alt.txt
+    ```
+
+2.  **Запустите сервер**:
+    ```bash
+    chmod +x start_alt.sh
+    ./start_alt.sh
+    ```
+
+Этот метод использует стандартный `transformers` и `accelerate` для распределения модели по 2 GPU в формате BF16.
+
 ## Testing the API
 
 Once the server is running (it may take a few minutes to download the 64GB+ weights), you can test it:

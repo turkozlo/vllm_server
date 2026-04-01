@@ -1,0 +1,10 @@
+# Standard Torch with CUDA 12.4 support (specified by user)
+# Note: On the actual server, use the existing torch 2.4.0+cu124
+torch==2.4.0
+transformers==4.49.0
+accelerate==1.0.1
+fastapi==0.124.3
+pydantic==2.12.5
+uvicorn==0.31.1
+sentencepiece
+protobuf
