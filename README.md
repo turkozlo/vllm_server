@@ -63,3 +63,15 @@ Response:
 
 - **OOM (Out Of Memory)**: Decrease `--max-model-len` in `start_server.sh` or use 4-bit quantization (`--quantization awq`).
 - **Connection Refused**: Ensure the server has finished loading before running `test_client.py`.
+
+## Error: `undefined symbol: cudaGetDriverEntryPointByVersion`
+
+Если вы получили такую ошибку при установке или запуске `vllm`, это означает конфликт версий CUDA:
+1.  **Проблема**: Библиотека `torch` скомпилирована под CUDA 12, а ваш драйвер NVIDIA старый (ниже ветки 525, например CUDA 11.x).
+2.  **Решение**:
+    *   Обновите драйверы NVIDIA на хосте до последней версии (минимум 525+).
+    *   Либо установите `vllm`, скомпилированный под CUDA 11.8:
+        ```bash
+        pip install vllm==0.6.3 --extra-index-url https://download.pytorch.org/whl/cu118
+        ```
+    *   Либо убедитесь, что в системе установлен полный `CUDA Toolkit 12.1`.
