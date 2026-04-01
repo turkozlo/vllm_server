@@ -1,0 +1,22 @@
+# Local model directory
+qwen_model/
+models/
+
+# Python Virtual Environments
+venv/
+.venv/
+vllm_env/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE environments
+.idea/
+.vscode/
+
+# Logs and temp files
+*.log
+.DS_Store
